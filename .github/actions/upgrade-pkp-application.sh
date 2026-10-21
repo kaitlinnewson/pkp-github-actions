@@ -20,7 +20,8 @@ source  $GITHUB_WORKSPACE/pkp-github-actions/.github/actions/ingest_datasets.sh
 source  $GITHUB_WORKSPACE/pkp-github-actions/.github/actions/prepare-logs.sh
 
 
-php tools/upgrade.php check
+# The version check fetches the latest version from pkp.sfu.ca; don't fail the build when it's unavailable
+timeout 60 php tools/upgrade.php check || echo "::warning::upgrade.php check failed; pkp.sfu.ca may be unavailable"
 php tools/upgrade.php upgrade
 
 

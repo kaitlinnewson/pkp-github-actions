@@ -15,3 +15,4 @@ sed -i 's/; smtp_port = 25/smtp_port = 1025/' config.inc.php
 sed -i 's/; smtp = On/smtp = On/'  config.inc.php
 sed -i 's/default = sendmail/default = smtp/' config.inc.php
 sed -i -e "s/^log_channel = daily$/log_channel = errorlog/" config.inc.php
+sed -i -e "s/^show_upgrade_warning = On$/show_upgrade_warning = Off/" config.inc.php
