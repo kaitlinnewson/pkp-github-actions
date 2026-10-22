@@ -38,9 +38,9 @@ runs:
 
     - uses: actions/checkout@v4
       with:
-        repository: 'pkp/pkp-github-actions'
+        repository: 'kaitlinnewson/pkp-github-actions'
         path: pkp-github-actions
-        ref: v1
+        ref: electron-integration-test
 
     - uses: tj-actions/install-postgresql@v3
       if: ${{matrix.database == 'pgsql'}}
